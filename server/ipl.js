@@ -1,6 +1,9 @@
 const filesystem = require("fs");
 //First Function
 function calculateTheMatchesPerSeason(matches) {
+    if(matches.length == 0){
+        return "you passed an empty object";
+    }
     const matchesPerSeason = matches.reduce((totalMatches, currentMatch) => {
         totalMatches[currentMatch.season] = totalMatches[currentMatch.season] + 1 || 1;
         return totalMatches;
@@ -11,6 +14,9 @@ function calculateTheMatchesPerSeason(matches) {
 module.exports.calculateTheMatchesPerSeason = calculateTheMatchesPerSeason;
 //Second Function
 function matchesWonPerTeamPerSeason(matches) {
+    if(matches.length == 0){
+        return "you passed an empty object";
+    }
     return matches.reduce((totalTeams, teams) => {
         if (totalTeams[teams.winner]) {
             if (totalTeams[teams.winner][teams.season]) {
@@ -30,6 +36,9 @@ function matchesWonPerTeamPerSeason(matches) {
 module.exports.matchesWonPerTeamPerSeason = matchesWonPerTeamPerSeason;
 //Third Function
 function extraRunsPerTeam(matches, deliveries) {
+    if(matches.length == 0){
+        return "Check your parameters";
+    }
     let extra_runs = {};
     extra_runs = deliveries.reduce((accumulator, delivery) => {
         let match = matches.map((match) => {
@@ -49,6 +58,9 @@ function extraRunsPerTeam(matches, deliveries) {
 module.exports.extraRunsPerTeam = extraRunsPerTeam;
 //Fourth Function
 function topTenEconomicalBowler(matches, deliveries) {
+    if(matches.length == 0 || deliveries.length==0){
+        return "Check your parameters";
+    }
     let runs = {};
     runs = deliveries.reduce((runsScored, delivery) => {
         let match = matches.map((match) => {

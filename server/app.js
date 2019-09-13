@@ -35,7 +35,7 @@ let jsonextraRunsPerTeam = JSON.stringify(extraRunsScoredPerTeam);
 data["extraRunsScoredPerTeam"] = extraRunsScoredPerTeam;
 IPL.writeOutput("./../output/extraRunsScoredPerTeam.json",jsonextraRunsPerTeam,"utf8")
 
-//console.log(ipl.extraRunsPerTeam(matches, deliveries));
+console.log(IPL.extraRunsPerTeam(matches, deliveries));
 
 let topEconomicalBowlers = IPL.topTenEconomicalBowler(matches,deliveries);
 let jsonTopEconomicalBowlers = JSON.stringify(topEconomicalBowlers);
