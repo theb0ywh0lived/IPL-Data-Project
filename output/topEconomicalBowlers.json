@@ -1,26 +1,12 @@
 {
-    "bowlers": [
-        "RN ten Doeschate",
-        "J Yadav",
-        "V Kohli",
-        "R Ashwin",
-        "S Nadeem",
-        "Parvez Rasool",
-        "MC Henriques",
-        "Z Khan",
-        "MA Starc",
-        "GB Hogg"
-    ],
-    "economy": [
-        4,
-        4.142857142857143,
-        5.454545454545454,
-        5.846153846153846,
-        6.142857142857143,
-        6.2,
-        6.32,
-        6.455172413793103,
-        6.767441860465116,
-        6.857142857142857
-    ]
+    "RN ten Doeschate": 4,
+    "J Yadav": 4.142857142857143,
+    "V Kohli": 5.454545454545454,
+    "R Ashwin": 5.846153846153846,
+    "S Nadeem": 6.142857142857143,
+    "Parvez Rasool": 6.2,
+    "MC Henriques": 6.32,
+    "Z Khan": 6.455172413793103,
+    "MA Starc": 6.767441860465116,
+    "GB Hogg": 6.857142857142857
 }

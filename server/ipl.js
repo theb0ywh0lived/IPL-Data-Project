@@ -17,7 +17,19 @@ function matchesWonPerTeamPerSeason(matches) {
     if(matches.length == 0){
         return "you passed an empty object";
     }
-    return matches.reduce((totalTeams, teams) => {
+    let year = matches.reduce((acc,curr)=>{
+        if( !acc[curr.season])
+         {
+           acc[curr.season] =0;
+         }
+        
+         return acc;
+     },{})
+   // return year;
+  
+    return matches
+    .filter(match => match.winner != '' )
+    .reduce((totalTeams, teams) => {
         if (totalTeams[teams.winner]) {
             if (totalTeams[teams.winner][teams.season]) {
                 ++totalTeams[teams.winner][teams.season];
@@ -27,10 +39,11 @@ function matchesWonPerTeamPerSeason(matches) {
             }
         }
         else {
-            totalTeams[teams.winner] = {};
+            totalTeams[teams.winner] = {...year};
             totalTeams[teams.winner][teams.season] = 1;
         }
         return totalTeams;
+    
     }, {});
 }
 module.exports.matchesWonPerTeamPerSeason = matchesWonPerTeamPerSeason;
@@ -102,6 +115,7 @@ function topTenEconomicalBowler(matches, deliveries) {
     economy = totalBallsByBowler.map(function (bowls, index) {
         return { "name": bowlerName[index], "economy": (totalRunsGivenByBowler[index] * 6) / bowls };
     });
+    //console.log(economy);
     let sortedEconomyRate = economy.sort(function (a, b) {
         return a.economy - b.economy;
     })
@@ -110,8 +124,7 @@ function topTenEconomicalBowler(matches, deliveries) {
         [item.name]: item.economy
     }));
     var topTenEconomicalBowler = Object.assign({}, ...topTenEconomicalBowlerObject);
-    let topTenEconomicalBowlerStatus = { "bowlers": Object.keys(topTenEconomicalBowler), "economy": Object.values(topTenEconomicalBowler) };
-    return topTenEconomicalBowlerStatus;
+    return topTenEconomicalBowler;
 
 }
 module.exports.topTenEconomicalBowler = topTenEconomicalBowler;
