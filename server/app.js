@@ -1,6 +1,6 @@
 const csvtojson = require("csvtojson");
 const filesystem = require("fs");
-
+/*
 csvtojson().fromFile("./../dataset/deliveries.csv").then(deliveries => {
 
     var jsonFile = JSON.stringify(deliveries);
@@ -11,7 +11,7 @@ csvtojson().fromFile("./../dataset/matches.csv").then(matches => {
     var jsonFilematches = JSON.stringify(matches);
     filesystem.writeFileSync('./../dataset/matches.json', jsonFilematches)
 });
-
+*/
 const matches = require('./../dataset/matches.json');
 const deliveries = require('./../dataset/deliveries.json');
 
