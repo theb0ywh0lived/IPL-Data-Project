@@ -1,6 +1,6 @@
+//use .. in fetch for live server . for static server
 
-
-fetch('../output/matchesPerYear.json')
+fetch('./output/matchesPerYear.json')
   .then(response => response.json())
   .then(data => {
     console.log(data);
@@ -53,7 +53,7 @@ function matchesPerYear(data) {
   });
 }
 
-fetch("../output/matchesPerTeamPerYear.json")
+fetch("./output/matchesPerTeamPerYear.json")
   .then(response => response.json())
   .then(data => {
     let title = Object.keys(data[0][1]);
@@ -126,7 +126,7 @@ function matchesPerTeamPerYear(data, title, modifiedSeries) {
 
 
 
-fetch('../output/extraRunsScoredPerTeam.json')
+fetch('./output/extraRunsScoredPerTeam.json')
   .then(response => response.json())
   .then(data2 => {
     console.log(data2);
@@ -179,7 +179,7 @@ function extraRunsScored(data2) {
   });
 }
 
-fetch('../output/topEconomicalBowlers.json')
+fetch('./output/topEconomicalBowlers.json')
   .then(response => response.json())
   .then(data2 => {
     console.log(data2);
